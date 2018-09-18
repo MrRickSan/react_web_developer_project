@@ -1,54 +1,45 @@
-'use strict';
-
 //  arguments object - no longer bound with arrow functions
 
-var add = function add(a, b) {
-    console.log(arguments); // accessible here
+const add = function ( a, b){
+    console.log(arguments);  // accessible here
     return a + b;
-};
+ }
 
 console.log(add(55, 1, 1001));
 
-var addArrow = function addArrow(a, b) {
+const addArrow = ( a, b) => {
     // console.log(arguments);  //  error!
     return a + b;
-};
+ }
 
 console.log(addArrow(55, 1, 1001));
 
 //  this keyword - no longer bound
 
-var user = {
+const user = {
     name: 'Ricardo',
     cities: ['Recife', 'Olinda', 'Porto'],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
-
+    printPlacesLived () {
         console.log(this.name);
         console.log(this.cities);
 
-        return this.cities.map(function (city) {
-            return _this.name + ' has lived in ' + city;
-        });
+        return this.cities.map( (city) => `${this.name} has lived in ${city}`);
 
         // this.cities.forEach( (city) => {
         //     console.log(`${this.name} has lived in ${city}`);
         // });
     }
-};
+}
 
 console.log(user.printPlacesLived());
 
-var multiplier = {
+
+const multiplier = {
     numbers: [2, 4, 10],
     multiplyBy: 2,
-    multiply: function multiply() {
-        var _this2 = this;
-
-        return this.numbers.map(function (number) {
-            return number * _this2.multiplyBy;
-        });
+    multiply () {
+        return this.numbers.map( (number) => number * this.multiplyBy);
     }
-};
+}
 
 console.log(multiplier.multiply());
