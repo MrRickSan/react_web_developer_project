@@ -1,13 +1,13 @@
 console.log('App.js is running!')
 
-let app = {
+const app = {
     title: 'Indecision App',
     subtitle: 'Put your life in the hands of a computer',
     options: ['One', 'Two']
 }
 
 // JSX - JavaScript XML
-let template = (
+const template = (
     <div>
         <h1>{app.title}</h1>
         {app.subtitle && <p>{app.subtitle}</p>}
@@ -19,7 +19,7 @@ let template = (
     </div>
 );
 
-let user = {
+const user = {
     name: 'Oliveira, Ricardo',
     age: 31,
     location: 'Porto, Portugal'
@@ -33,7 +33,7 @@ function getLocation (location) {
 
 // ternary operators
 // logical and operator
-let templateTwo = (
+const templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
         {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
@@ -41,6 +41,6 @@ let templateTwo = (
     </div>
 );
 
-let appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
