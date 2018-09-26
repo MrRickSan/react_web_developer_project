@@ -38,6 +38,8 @@ var IndecisionApp = function (_React$Component) {
         value: function handleDeleteOption(optionToRemove) {
             this.setState(function (prevState) {
                 return {
+                    /* Array.filter note: returns true and a new array with the matching item in the array. 
+                    If false, delete the item and return a new array without the item. */
                     options: prevState.options.filter(function (option) {
                         return optionToRemove !== option;
                     })

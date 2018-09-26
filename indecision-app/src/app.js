@@ -16,6 +16,8 @@ class IndecisionApp extends React.Component {
 
     handleDeleteOption (optionToRemove) {
         this.setState ( (prevState) => ({
+            /* Array.filter note: returns true and a new array with the matching item in the array. 
+            If false, delete the item and return a new array without the item. */
             options: prevState.options.filter( (option) => optionToRemove !== option )
         }));
     }
